@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
-    kotlin("plugin.serialization") version "1.9.20"
+    kotlin("plugin.serialization") version "1.8.10"
 }
 
 android {
@@ -56,7 +56,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.4"
+        kotlinCompilerExtensionVersion = "1.4.3"
     }
 
     packaging {
@@ -91,7 +91,7 @@ dependencies {
     ksp("androidx.room:room-compiler:$roomVersion")
 
     // Hilt Dependency Injection
-    val hiltVersion = "2.48"
+    val hiltVersion = "2.44"
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     ksp("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
