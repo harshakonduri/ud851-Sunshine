@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Hindu Cultural Colors -->
+    <color name="saffron">#FF9933</color>
+    <color name="deep_saffron">#CC7722</color>
+    <color name="light_saffron">#FFB366</color>
+    <color name="deep_blue">#000080</color>
+    <color name="royal_blue">#1A1A99</color>
+    <color name="gold">#FFD700</color>
+    <color name="cream">#FFF8DC</color>
+    <color name="light_cream">#FFFEF5</color>
+    <color name="dark_brown">#3E2723</color>
+    <color name="medium_brown">#5D4037</color>
+
+    <!-- Semantic Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="error">#B00020</color>
+    <color name="success">#4CAF50</color>
+</resources>
