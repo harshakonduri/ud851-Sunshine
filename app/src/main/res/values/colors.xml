@@ -17,4 +17,7 @@
     <color name="black">#000000</color>
     <color name="error">#B00020</color>
     <color name="success">#4CAF50</color>
+
+    <!-- Launcher Icon -->
+    <color name="ic_launcher_background">#FF9933</color>
 </resources>

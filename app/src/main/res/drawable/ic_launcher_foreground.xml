@@ -1,0 +1,45 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:translateX="10.8"
+        android:translateY="10.8">
+        <!-- Om Symbol simplified representation -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M54,20
+                C64,20 72,28 72,38
+                C72,48 64,56 54,56
+                C44,56 36,48 36,38
+                C36,28 44,20 54,20
+                Z
+                M54,58
+                C64,58 72,66 72,76
+                C72,86 64,94 54,94
+                C44,94 36,86 36,76
+                C36,66 44,58 54,58
+                Z
+                M30,38
+                L30,76
+                M78,38
+                L78,76"/>
+        <path
+            android:fillColor="#FFD700"
+            android:pathData="M48,38
+                C48,34 50,32 54,32
+                C58,32 60,34 60,38
+                C60,42 58,44 54,44
+                C50,44 48,42 48,38
+                Z
+                M48,76
+                C48,72 50,70 54,70
+                C58,70 60,72 60,76
+                C60,80 58,82 54,82
+                C50,82 48,80 48,76
+                Z"/>
+    </group>
+</vector>
