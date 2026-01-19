@@ -47,3 +47,17 @@
 -keepclassmembernames class kotlinx.** {
     volatile <fields>;
 }
+
+# Hilt
+-keep class dagger.hilt.** { *; }
+-keep class javax.inject.** { *; }
+-keep class * extends dagger.hilt.android.internal.managers.ApplicationComponentManager { *; }
+-keep class **Hilt** { *; }
+-keep class **_Factory { *; }
+-keep class **_MembersInjector { *; }
+-keep @dagger.hilt.android.lifecycle.HiltViewModel class * { *; }
+-keep @dagger.Module class * { *; }
+-keep @dagger.hilt.InstallIn class * { *; }
+
+# Keep Application class
+-keep class com.vedicvidya.VedicVidyaApplication { *; }
