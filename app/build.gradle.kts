@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
-    kotlin("plugin.serialization") version "1.8.10"
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -59,9 +59,10 @@ android {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
 
-    packaging {
+    packagingOptions {
         resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes.add("/META-INF/AL2.0")
+            excludes.add("/META-INF/LGPL2.1")
         }
     }
 }
