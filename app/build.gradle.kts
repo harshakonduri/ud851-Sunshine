@@ -86,7 +86,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
 
     // Room Database
-    val roomVersion = "2.6.1"
+    val roomVersion = "2.5.2"
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
