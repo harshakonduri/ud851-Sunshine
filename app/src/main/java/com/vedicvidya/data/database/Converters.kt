@@ -3,7 +3,7 @@ package com.vedicvidya.data.database
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.vedicvidya.data.model.SourceCitation
+import com.vedicvidya.data.model.*
 
 /**
  * Type converters for Room database
@@ -37,5 +37,49 @@ class Converters {
             val type = object : TypeToken<List<SourceCitation>>() {}.type
             gson.fromJson(it, type)
         }
+    }
+
+    // CachePriority enum converters
+    @TypeConverter
+    fun fromCachePriority(value: CachePriority): String {
+        return value.name
+    }
+
+    @TypeConverter
+    fun toCachePriority(value: String): CachePriority {
+        return CachePriority.valueOf(value)
+    }
+
+    // QualityTier enum converters
+    @TypeConverter
+    fun fromQualityTier(value: QualityTier): String {
+        return value.name
+    }
+
+    @TypeConverter
+    fun toQualityTier(value: String): QualityTier {
+        return QualityTier.valueOf(value)
+    }
+
+    // StorageTier enum converters
+    @TypeConverter
+    fun fromStorageTier(value: StorageTier): String {
+        return value.name
+    }
+
+    @TypeConverter
+    fun toStorageTier(value: String): StorageTier {
+        return StorageTier.valueOf(value)
+    }
+
+    // SummaryLevel enum converters
+    @TypeConverter
+    fun fromSummaryLevel(value: SummaryLevel): String {
+        return value.name
+    }
+
+    @TypeConverter
+    fun toSummaryLevel(value: String): SummaryLevel {
+        return SummaryLevel.valueOf(value)
     }
 }
