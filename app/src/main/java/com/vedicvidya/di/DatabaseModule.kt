@@ -8,6 +8,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import javax.inject.Singleton
 
 /**
@@ -19,16 +22,37 @@ object DatabaseModule {
 
     @Provides
     @Singleton
+    fun provideApplicationScope(): CoroutineScope {
+        return CoroutineScope(SupervisorJob() + Dispatchers.IO)
+    }
+
+    @Provides
+    @Singleton
+    fun provideDatabaseCallback(
+        scope: CoroutineScope
+    ): DatabaseCallback {
+        return DatabaseCallback(scope)
+    }
+
+    @Provides
+    @Singleton
     fun provideVedicDatabase(
-        @ApplicationContext context: Context
+        @ApplicationContext context: Context,
+        callback: DatabaseCallback
     ): VedicDatabase {
-        return Room.databaseBuilder(
+        val database = Room.databaseBuilder(
             context,
             VedicDatabase::class.java,
             VedicDatabase.DATABASE_NAME
         )
             .fallbackToDestructiveMigration()
+            .addCallback(callback)
             .build()
+
+        // Populate database with sample data on first run
+        callback.populateDatabase(database)
+
+        return database
     }
 
     @Provides
