@@ -30,7 +30,7 @@ interface CachedQueryDao {
     @Query("DELETE FROM cached_queries WHERE expiresAt < :currentTime")
     suspend fun deleteExpiredQueries(currentTime: Long = System.currentTimeMillis())
 
-    @Query("DELETE FROM cached_queries WHERE priority = 'LOW' ORDER BY lastAccessedAt ASC LIMIT :count")
+    @Query("DELETE FROM cached_queries WHERE id IN (SELECT id FROM cached_queries WHERE priority = 'LOW' ORDER BY lastAccessedAt ASC LIMIT :count)")
     suspend fun evictLowPriorityQueries(count: Int)
 
     @Delete

@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace = "com.vedicvidya"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.vedicvidya"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0.0"
 
@@ -49,6 +49,9 @@ android {
 
     kotlinOptions {
         jvmTarget = "17"
+        freeCompilerArgs += listOf(
+            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"
+        )
     }
 
     buildFeatures {
@@ -56,7 +59,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.8"
     }
 
     packagingOptions {
@@ -92,7 +95,7 @@ dependencies {
     ksp("androidx.room:room-compiler:$roomVersion")
 
     // Hilt Dependency Injection
-    val hiltVersion = "2.44"
+    val hiltVersion = "2.48"
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     ksp("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
